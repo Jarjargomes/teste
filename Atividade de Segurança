@@ -1,0 +1,40 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		int a = 11;
+		int b = 17;
+
+		int c = a * b;
+		int d = (a - 1) * (b - 1);
+		int e = 7;
+		int f = 0;
+
+		int cont = 0;
+		for (int i = 2; cont < 1; i++) {
+			if ((i * e) % d == 1) {
+				f = i;
+				cont++;
+			}
+		}
+
+		System.out.println("Valores disponíveis:" + a + " " + b);
+		System.out.println("c: " + c);
+		System.out.println("d: " + d);
+		System.out.println("e: " + e);
+		System.out.println("f: " + f);
+
+		System.out.println("Digite o valor do script");
+		int valor = sc.nextInt();
+		int valordealteração = (int) Math.pow((valor), f);
+		int numero = valordealteração % c;
+		System.out.println("encripitando: " + numero);
+		int valordescriptado = (int) Math.pow((valordealteração), e);
+		int descriptando = valor % c;
+		System.out.println("descriptamento: " + descriptando);
+	}
+}
+
